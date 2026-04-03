@@ -1,0 +1,214 @@
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --accent: #ff6b6b;
+  --font-display: "Orbitron", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.site-header {
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.site-nav a {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 2.5rem;
+}
+
+.site-main--hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-main--hero img {
+  max-width: min(100%, 1200px);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 0 0 0.35rem;
+  text-align: center;
+}
+
+.page-meta {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.concert-poster {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-intro {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.past-concerts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+.past-concerts-grid a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.past-concerts-grid a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.past-concerts-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.past-concerts-grid .thumb-caption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.about-body {
+  max-width: 40rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.about-videos {
+  margin-top: 2.5rem;
+}
+
+.about-videos h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.about-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.75rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-videos-grid a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-videos-grid a:hover img {
+  opacity: 0.92;
+}
+
+.about-videos-grid a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.about-videos-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  aspect-ratio: 480 / 360;
+  object-fit: cover;
+}
+
+.about-videos-grid .thumb-caption {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* Guild / text-heavy concert pages */
+.concert-legacy {
+  text-align: center;
+}
+
+.concert-legacy img {
+  max-width: 90%;
+  height: auto;
+}
+
+.concert-legacy .title-lockup {
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .concert-legacy .title-lockup {
+    max-width: 55%;
+  }
+}
