@@ -62,7 +62,23 @@ body {
   align-items: center;
 }
 
-.site-main--hero img {
+/* Wide enough for two 600px posters + gap side by side */
+.site-main.site-main--hero {
+  max-width: min(100%, 1260px);
+}
+
+.hero-posters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: min(100%, 1240px);
+}
+
+.site-main--hero .hero-poster {
   max-width: min(100%, 600px);
   width: 100%;
   height: auto;
@@ -94,8 +110,17 @@ body {
 .gallery-intro {
   text-align: center;
   max-width: 42rem;
+  margin: 0 auto 0.35rem;
+  line-height: 1.5;
+}
+
+.gallery-subnote {
+  text-align: center;
+  max-width: 42rem;
   margin: 0 auto 2rem;
   line-height: 1.5;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .past-concerts-grid {
