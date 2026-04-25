@@ -90,6 +90,21 @@ body {
   margin: 0 auto;
 }
 
+.october-feature {
+  text-align: center;
+}
+
+.october-feature-line {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.october-feature .hero-poster {
+  margin-top: 0.45rem;
+}
+
 @media (max-width: 760px) {
   .hero-posters {
     flex-wrap: wrap;
