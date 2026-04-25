@@ -25,7 +25,7 @@
       Send us a message using this form, or email us directly at
       <a class="contact-email-link" href="mailto:info@pastcurfew.live">info@pastcurfew.live</a>.
     </p>
-    <form class="contact-form" action="mailto:info@pastcurfew.live?subject=Past%20Curfew%20Website%20Message" method="get">
+    <form class="contact-form" id="contact-form">
       <label for="contact-name">Name</label>
       <input id="contact-name" name="Name" type="text" autocomplete="name" required>
 
@@ -42,5 +42,37 @@
     </form>
     <p class="contact-note">Submitting this form opens your email app and drafts the message to info@pastcurfew.live.</p>
   </main>
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById("contact-name").value.trim();
+        var email = document.getElementById("contact-email").value.trim();
+        var phone = document.getElementById("contact-phone").value.trim();
+        var message = document.getElementById("contact-message").value.trim();
+
+        var subject = "Past Curfew Website Message";
+        var bodyLines = [
+          "Name: " + name,
+          "Email: " + email,
+          "Phone: " + (phone || "(not provided)"),
+          "",
+          "Message:",
+          message
+        ];
+
+        var mailtoHref =
+          "mailto:info@pastcurfew.live" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(bodyLines.join("\n"));
+
+        window.location.href = mailtoHref;
+      });
+    })();
+  </script>
 </body>
 </html>
