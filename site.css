@@ -69,20 +69,31 @@ body {
 
 .hero-posters {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
-  max-width: min(100%, 1240px);
+  max-width: min(100%, 1080px);
+}
+
+.hero-posters > * {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .site-main--hero .hero-poster {
-  max-width: min(100%, 600px);
+  max-width: 520px;
   width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  .hero-posters {
+    flex-wrap: wrap;
+  }
 }
 
 .page-title {
@@ -98,6 +109,17 @@ body {
   color: rgba(255, 255, 255, 0.75);
   margin: 0 0 1.5rem;
   font-size: 0.95rem;
+}
+
+.ticket-link {
+  color: #ffd166;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ticket-link:hover {
+  text-decoration: underline;
 }
 
 .concert-poster {
