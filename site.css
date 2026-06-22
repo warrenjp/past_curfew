@@ -62,7 +62,7 @@ body {
   align-items: center;
 }
 
-/* Wide enough for two 600px posters + gap side by side */
+/* Wide enough for two posters + gap side by side */
 .site-main.site-main--hero {
   max-width: min(100%, 1260px);
 }
@@ -77,9 +77,16 @@ body {
   max-width: min(100%, 1080px);
 }
 
-.hero-posters > * {
+.hero-poster-slot {
   flex: 1 1 0;
   min-width: 0;
+  max-width: 520px;
+}
+
+/* Center the right slot when no left poster is present */
+.hero-posters:not(:has(.hero-poster-slot--left)) .hero-poster-slot--right {
+  flex: 0 1 auto;
+  width: min(100%, 520px);
 }
 
 .site-main--hero .hero-poster {
@@ -90,18 +97,18 @@ body {
   margin: 0 auto;
 }
 
-.october-feature {
+.hero-feature {
   text-align: center;
 }
 
-.october-feature-line {
+.hero-feature-line {
   margin: 0 0 0.35rem;
   font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.03em;
 }
 
-.october-feature .hero-poster {
+.hero-feature .hero-poster {
   margin-top: 0.45rem;
 }
 

@@ -20,16 +20,34 @@
     </nav>
   </header>
   <main class="site-main site-main--hero">
+    <!--
+      HOME POSTERS
+      - Right slot: featured October Playlist show (keep this block).
+      - Left slot (optional): add a <div class="hero-poster-slot hero-poster-slot--left">...</div>
+        before the right slot when you have another upcoming show.
+      - To show one centered poster only: remove or comment out the left slot block.
+    -->
     <div class="hero-posters" role="group" aria-label="Upcoming shows">
-      <img class="hero-poster" src="Past Curfew at Thursday Live May 28 26.jpg" alt="Past Curfew at Thursday Live — May 28, 2026">
-      <div class="october-feature">
-        <p class="october-feature-line">Our Annual October Blowout!</p>
-        <p class="october-feature-line">Entirely NEW Playlist</p>
-        <p class="october-feature-line">Click for Details and Tickets</p>
-        <a href="concert-playlist-october-2026.html" aria-label="View Playlist: Everything's Better With Horns concert details">
-          <img class="hero-poster" src="450 x 630.jpeg" alt="Past Curfew and Friends present Playlist: Everything's Better With Horns — October 23, 2026">
+
+      <!-- LEFT SLOT (optional) — example:
+      <div class="hero-poster-slot hero-poster-slot--left">
+        <a href="concert-thursday-live-may-2026.html">
+          <img class="hero-poster" src="Past Curfew at Thursday Live May 28 26.jpg" alt="Past Curfew at Thursday Live — May 28, 2026">
         </a>
       </div>
+      -->
+
+      <div class="hero-poster-slot hero-poster-slot--right">
+        <div class="hero-feature">
+          <p class="hero-feature-line">Our Annual October Blowout!</p>
+          <p class="hero-feature-line">Entirely NEW Playlist</p>
+          <p class="hero-feature-line">Click for Details and Tickets</p>
+          <a href="concert-playlist-october-2026.html" aria-label="View Playlist: Everything's Better With Horns concert details">
+            <img class="hero-poster" src="450 x 630.jpeg" alt="Past Curfew and Friends present Playlist: Everything's Better With Horns — October 23, 2026">
+          </a>
+        </div>
+      </div>
+
     </div>
   </main>
 </body>
