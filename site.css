@@ -59,28 +59,41 @@ body {
 .site-main--hero {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-/* Wide enough for two posters + gap side by side */
+/* Stage photo runs the full width of the window */
 .site-main.site-main--hero {
-  max-width: min(100%, 1260px);
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .hero-posters {
   display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.75rem;
   width: 100%;
-  max-width: min(100%, 1080px);
+  max-width: none;
 }
 
 .hero-poster-slot {
-  flex: 1 1 0;
+  flex: 0 1 auto;
   min-width: 0;
   max-width: 520px;
+  width: 100%;
+}
+
+.hero-posters:has(.hero-photo) .hero-poster-slot--right {
+  max-width: 460px;
+}
+
+.hero-posters:has(.hero-photo) .hero-poster-slot--left {
+  max-width: none;
+  width: 100%;
 }
 
 /* Center the right slot when no left poster is present */
@@ -95,6 +108,51 @@ body {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.hero-photo-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero-photo-link:hover .hero-photo {
+  filter: brightness(1.06);
+}
+
+.hero-photo-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -6px;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-photo-caption {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 46rem);
+  margin: 0;
+  padding: 0.65rem 1rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 2vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .hero-feature {
@@ -113,8 +171,8 @@ body {
 }
 
 @media (max-width: 760px) {
-  .hero-posters {
-    flex-wrap: wrap;
+  .hero-posters:has(.hero-photo) .hero-poster-slot--right {
+    max-width: 420px;
   }
 }
 
